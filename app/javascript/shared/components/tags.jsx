@@ -2,6 +2,8 @@ import { h, Component } from 'preact';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 
+// NEEDED! this looks to be the input field for new posts, where you specify tags
+
 const KEYS = {
   UP: 'ArrowUp',
   DOWN: 'ArrowDown',

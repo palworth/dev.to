@@ -1,6 +1,8 @@
 import { h } from 'preact';
 import PropTypes from 'prop-types';
 
+// NEEDED! looks to be submit button for making a new post
+
 const PublishToggle = ({
   previewShowing,
   onPreview,

@@ -2,6 +2,8 @@ import { h, Component } from 'preact';
 import { PropTypes } from 'preact-compat';
 import debounce from 'lodash.debounce';
 
+// NEEDED! THIS COMPONENT RENDERS READING LIST ITEMS, CAN BE USED FOR COLLECTIONS
+
 import {
   defaultState,
   loadNextPage,
@@ -20,6 +22,8 @@ const STATUS_VIEW_VALID = 'valid';
 const STATUS_VIEW_ARCHIVED = 'archived';
 const READING_LIST_ARCHIVE_PATH = '/readinglist/archive';
 const READING_LIST_PATH = '/readinglist';
+
+// FILTERS SIDEBAR INPUT AGAINST READING LIST ITEMS
 
 const FilterText = ({ selectedTags, query, value }) => {
   return (
