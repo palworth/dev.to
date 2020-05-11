@@ -293,6 +293,8 @@ ActiveRecord::Schema.define(version: 2020_02_27_214321) do
     t.index ["user_id"], name: "index_classified_listings_on_user_id"
   end
 
+# collections table will be utilized for our functionality
+# Change relationship with articles to make it many to many 
   create_table "collections", id: :serial, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "description"
