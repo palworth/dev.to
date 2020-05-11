@@ -1,3 +1,4 @@
+# We will need to add our own tests for new functionality here
 require "rails_helper"
 
 RSpec.describe Collection, type: :model do
@@ -34,6 +35,8 @@ RSpec.describe Collection, type: :model do
     end
   end
 
+  # currently I think this updates the time an article was last touched by a user
+  # it updates all articles in a collection to the same date when a collection is opend
   describe "#touch_articles" do
     it "touches all articles in the collection" do
       Timecop.freeze(DateTime.parse("2019/10/24")) do
