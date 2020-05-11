@@ -1,3 +1,5 @@
+# Originally we thought our collections would be similar to a reading list
+# This is a PORO and we want collections to be a resource
 class ReadingList
   attr_accessor :user
   def initialize(user)
