@@ -1,3 +1,8 @@
+# We will add to this collection model
+# it already belongs to users and has many articles
+# We need to change relationship to article to many to many
+# we need to tag and title validations
+
 class Collection < ApplicationRecord
   has_many :articles
   belongs_to :user
