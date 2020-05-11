@@ -1,3 +1,4 @@
+# will probably need to add to allow user to create a collection using tags
 module ActsAsTaggableOn
   class TagParser < GenericParser
     def parse
