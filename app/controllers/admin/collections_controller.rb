@@ -1,3 +1,5 @@
+# We will not use this controller becuase is namespaced to Admin
+# We want regular logged in users to have CRUD Funct. for collections
 module Admin
   class CollectionsController < Admin::ApplicationController
     # To customize the behavior of this controller,
