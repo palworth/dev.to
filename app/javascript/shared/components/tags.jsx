@@ -2,8 +2,9 @@ import { h, Component } from 'preact';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 
-// NEEDED! this looks to be the input field for new posts, where you specify tags
+// NEEDED! input field for new posts, where you specify tags
 
+// define keys and regex below
 const KEYS = {
   UP: 'ArrowUp',
   DOWN: 'ArrowDown',
@@ -46,6 +47,7 @@ class Tags extends Component {
     };
   }
 
+  // change tags if it's a listing
   componentDidMount() {
     const { listing } = this.props;
     if (listing === true) {
@@ -85,6 +87,7 @@ class Tags extends Component {
     }
   }
 
+  // update based on text
   componentDidUpdate() {
     // stop cursor jumping if the user goes back to edit previous tags
     const { cursorIdx, prevLen } = this.state;

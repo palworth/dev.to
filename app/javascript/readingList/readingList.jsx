@@ -53,6 +53,7 @@ export class ReadingList extends Component {
     this.clearSelectedTags = clearSelectedTags.bind(this);
   }
 
+  // update state with needed items on mount
   componentDidMount() {
     const { hitsPerPage, statusView } = this.state;
 
@@ -92,6 +93,7 @@ export class ReadingList extends Component {
     window.history.replaceState(null, null, newPath);
   };
 
+  // archive / un-archive items
   toggleArchiveStatus = (event, item) => {
     event.preventDefault();
 
@@ -164,6 +166,7 @@ export class ReadingList extends Component {
     );
   }
 
+  // render items
   render() {
     const {
       items,

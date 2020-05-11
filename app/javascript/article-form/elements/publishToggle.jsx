@@ -1,7 +1,9 @@
 import { h } from 'preact';
 import PropTypes from 'prop-types';
 
-// NEEDED! looks to be submit button for making a new post
+// NEEDED! buttons for making a new post
+// appropriate methods for buttons are injected via props,
+// this component handles previews, drafts, publishing
 
 const PublishToggle = ({
   previewShowing,
