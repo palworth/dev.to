@@ -1,5 +1,8 @@
+# This ML calculates rankings for articles and comments
 class BlackBox
   class << self
+    # hotness_score is a ranking system which takes in quantifibly characteristics of articles
+    # and creates a score based on this characteristics
     def article_hotness_score(article, function_caller = FunctionCaller)
       usable_date = article.crossposted_at || article.published_at
       reaction_points = article.score
