@@ -365,6 +365,9 @@ class Article < ApplicationRecord
     (crossposted_at || published_at).utc.iso8601
   end
 
+  # 2 series methods below are called on an article and return the slug of the collection
+  # This tells us that collection now operates currently as a thread of linked articles
+
   def series
     # name of series article is part of
     collection&.slug
