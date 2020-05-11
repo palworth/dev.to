@@ -1,3 +1,5 @@
+# This class is responsible for segesting articles to reader when they are already viewing one
+# Returns like of alike article and displays them ranked upon blackbox criteria
 class ArticleSuggester
   def initialize(article)
     @article = article
@@ -36,6 +38,8 @@ class ArticleSuggester
       first(max)
   end
 
+  # This method is the SQL query which recommends articles
+  # Its ordered by 'hotness_score', a blackbox calculation which ranks articles
   def suggestions_by_tag(max: 4)
     Article.published.tagged_with(article.tag_list, any: true).
       where.not(id: article.id).
