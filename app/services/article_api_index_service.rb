@@ -11,7 +11,7 @@ class ArticleApiIndexService
     @collection_id = params[:collection_id]
     @per_page = params[:per_page]
   end
-
+# list articles based on params
   def get
     if tag.present?
       tag_articles

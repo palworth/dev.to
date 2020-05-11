@@ -1,5 +1,6 @@
 class BlackBox
   class << self
+    # calculates how popular an article is 
     def article_hotness_score(article, function_caller = FunctionCaller)
       usable_date = article.crossposted_at || article.published_at
       reaction_points = article.score

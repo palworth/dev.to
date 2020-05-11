@@ -16,6 +16,7 @@ module Api
         @articles = @articles.select(INDEX_ATTRIBUTES_FOR_SERIALIZATION).decorate
 
         set_surrogate_key_header Article.table_key, @articles.map(&:record_key)
+        # exposing article data
       end
 
       def show

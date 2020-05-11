@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  # add more tests to cover article coverage ~68%
   include CloudinaryHelper
   include ActionView::Helpers
   include AlgoliaSearch
@@ -174,6 +175,7 @@ class Article < ApplicationRecord
     end
 
     add_index "ordered_articles", id: :index_id, per_environment: true, enqueue: :trigger_index do
+      # hotness score gets calculated in blackbox
       attributes :title, :path, :class_name, :comments_count, :reading_time, :language,
                  :tag_list, :positive_reactions_count, :id, :hotness_score, :score, :readable_publish_date, :flare_tag, :user_id,
                  :organization_id, :cloudinary_video_url, :video_duration_in_minutes, :experience_level_rating, :experience_level_rating_distribution, :approved
@@ -366,11 +368,14 @@ class Article < ApplicationRecord
   end
 
   def series
+    # find article in the collection
     # name of series article is part of
     collection&.slug
   end
 
   def all_series
+    # find article in all the collections, using the collection and pulling
+    # article from the collection
     # all series names
     user&.collections&.pluck(:slug)
   end
@@ -412,6 +417,7 @@ class Article < ApplicationRecord
   end
 
   def search_score
+    # looks like something about how popular an article is
     calculated_score = hotness_score.to_i + ((comments_count * 3).to_i + positive_reactions_count.to_i * 300 * user.reputation_modifier * score.to_i)
     calculated_score.to_i
   end
