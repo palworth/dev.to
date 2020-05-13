@@ -352,6 +352,7 @@ Rails.application.routes.draw do
 
   # MachineCollection routes
   get "/machinecollections" => "machine_collections#index"
+  get "/machinecollections/:id" => "machine_collections#show"
 
   # serviceworkers
   get "/serviceworker" => "service_worker#index"
