@@ -12,7 +12,6 @@ export const ItemListItem = ({ item, children, currentUser, path }) => {
     readingTime: item.article_reading_time || item.reading_time || null,
     tags: item.tag_list || item.article_tags || item.reactable_tags || null,
   };
-  console.log(adaptedItem)
   // update readingTime to 1 min if the reading time is less than 1 min
   adaptedItem.readingTime = Math.max(1, adaptedItem.readingTime || null);
 

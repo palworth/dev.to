@@ -1,5 +1,7 @@
 <% @machine_collection%>
 
-<div data-collections="<%= @machine_collection.to_json() %>">
-  <h1>test</h1>
+<div class="home">
+  <div class="item-list-container" id="reading-list" data-collection="<%= @machine_collection.to_json() %>">
+  </div>
 </div>
+<%= javascript_pack_tag "collectionList", defer: true %>
