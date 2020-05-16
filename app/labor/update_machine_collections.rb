@@ -5,7 +5,7 @@ class UpdateMachineCollections
 
   def update_all_collections
     MachineCollection.all.each do |coll|
-      coll.suggested_articles
+      coll.articles << coll.suggested_articles
     end
   end
 
